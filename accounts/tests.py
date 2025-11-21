@@ -18,7 +18,7 @@ class UserAPITestCase(APITestCase):
     def test_register_user(self):
         data = {
             "username": "newuser",
-            "password": "newpassword123",
+            "password": "Newpassword_123",
             "email": "newuser@example.com",
             "role": "viewer"
         }
@@ -29,7 +29,7 @@ class UserAPITestCase(APITestCase):
         self.assertEqual(user.role, "viewer")
 
     def test_login_success(self):
-        response = self.client.post(self.login_url, {"username": "admin", "password": "admin123"})
+        response = self.client.post(self.login_url, {"username": "admin", "password": "Admin_123"})
         self.assertEqual(response.status_code, 200)
         self.assertIn("user", response.data)
         self.assertEqual(response.data["user"]["username"], "admin")

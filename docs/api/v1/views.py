@@ -21,7 +21,7 @@ class FileListCreateView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         file = self.request.FILES["file"]
         file_name, file_url = upload_file_to_minio(file, file.content_type)
-        serializer.save(owner=self.request.user, file_name=file_name, file_url=file_url)
+        serializer.save(author=self.request.user, file_name=file_name, file_url=file_url)
 
 
 class FileDetailView(generics.RetrieveDestroyAPIView):

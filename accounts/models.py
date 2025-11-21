@@ -6,7 +6,7 @@ class User(AbstractUser):
     class Roles(models.TextChoices):
         ADMIN = "admin", "Admin"
         EDITOR = "editor", "Editor"
-        VIEWER = "VIEWER", "Viewer"
+        VIEWER = "viewer", "Viewer"
 
     role = models.CharField(
         max_length=20,
